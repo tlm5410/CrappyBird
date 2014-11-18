@@ -1,6 +1,7 @@
 package app;
 
 public class Bird {
+    int x, y, diameter, speed;
     
     public Bird(){
         
