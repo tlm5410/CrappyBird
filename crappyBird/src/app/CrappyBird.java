@@ -13,10 +13,11 @@ public class CrappyBird extends JFrame{
         mainPanel = new MainPanel();
         
         getContentPane().setLayout(new BorderLayout());
-//        getContentPane().add(mainPanel,"Center");
-
+        getContentPane().add(mainPanel,"Center");
+      
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize (720, 640);
         setVisible(true);
     }
 }
+    
