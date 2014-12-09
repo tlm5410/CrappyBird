@@ -21,7 +21,9 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
    int score;
    JLabel background;
    JLabel playerPiece;
+   JLabel ground;
    Image BackgroundImg;
+   Image GroundImg;
    boolean collisionOccured;
    JLabel obstaclePiece;
    
@@ -34,14 +36,22 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
     obstaclePiece = new JLabel(new ImageIcon("img/tube2.png"));
     
     BackgroundImg = Toolkit.getDefaultToolkit().getImage("img/bg.png").getScaledInstance(720, 640, Image.SCALE_DEFAULT);
-    
+    GroundImg = Toolkit.getDefaultToolkit().getImage("img/ground.png").getScaledInstance(720, 640, Image.SCALE_DEFAULT);
     setLayout(new BorderLayout());
         background = new JLabel(new ImageIcon(BackgroundImg));
+       
         add(background);
+        
+        ground.setLayout(null);
         background.setLayout(null);
         
         background.add(playerPiece);
+<<<<<<< HEAD
         background.add(obstaclePiece);
+=======
+        background.add(ground);
+        ground.setBounds(new Rectangle(720,1725));
+>>>>>>> 20e86fa30e861f6e42ac4bc4caa5e3016dab1e8f
         playerPiece.setBounds(new Rectangle(crappyBird.x, crappyBird.y, 75, 75));
         obstaclePiece.setBounds(new Rectangle(topObstacle.x,topObstacle.y,50,500));
         
