@@ -10,16 +10,19 @@ public class Bird {
     int speed;
     Image birdImg;
     
-    public Bird(){
-        
-    }
-    
-    public void moveBird(int y){
-        y= y;
+    public Bird(int startX, int startY, int setSpeed){
+        x= startX;
+        y= startY;
+        speed= setSpeed;
     }
     
     public void jump(){
-        
+        changeDirection();
+        y = y - 100;
+        changeDirection();
+    }
+    public void changeDirection(){
+        speed = -speed;
     }
     
     public void reset(){

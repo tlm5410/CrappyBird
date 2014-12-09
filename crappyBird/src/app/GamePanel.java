@@ -40,7 +40,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
         playerPiece.setBounds(new Rectangle(crappyBird.x, crappyBird.y, 75, 75));
         
         
-        timer = new Timer (1000/25,this);
+        timer = new Timer (1000/20,this);
         timer.start();
         
         addKeyListener(this);
