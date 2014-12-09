@@ -35,7 +35,7 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
     GroundImg = Toolkit.getDefaultToolkit().getImage("img/ground.png").getScaledInstance(720, 640, Image.SCALE_DEFAULT);
     setLayout(new BorderLayout());
         background = new JLabel(new ImageIcon(BackgroundImg));
-        ground = new JLabel(new ImageIcon(GroundImg));
+       
         add(background);
         
         ground.setLayout(null);
