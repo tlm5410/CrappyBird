@@ -46,12 +46,10 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
         background.setLayout(null);
         
         background.add(playerPiece);
-<<<<<<< HEAD
         background.add(obstaclePiece);
-=======
         background.add(ground);
         ground.setBounds(new Rectangle(720,1725));
->>>>>>> 20e86fa30e861f6e42ac4bc4caa5e3016dab1e8f
+
         playerPiece.setBounds(new Rectangle(crappyBird.x, crappyBird.y, 75, 75));
         obstaclePiece.setBounds(new Rectangle(topObstacle.x,topObstacle.y,50,500));
         
