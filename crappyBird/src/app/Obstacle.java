@@ -17,6 +17,6 @@ public class Obstacle {
     }
     
     public void moveObstacle(){
-     x = x + 100;   
+     x = x - 100;   
     }
 }

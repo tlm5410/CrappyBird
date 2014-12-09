@@ -16,18 +16,22 @@ import javax.swing.*;
 public class GamePanel extends JPanel implements KeyListener, ActionListener{
    Bird crappyBird;
    Obstacle topObstacle, bottomObstacle;
-   Timer timer;
+   Timer birdTimer;
+   Timer OTimer;
    int score;
    JLabel background;
    JLabel playerPiece;
    Image BackgroundImg;
    boolean collisionOccured;
+   JLabel obstaclePiece;
    
    public GamePanel(){
     crappyBird = new Bird(100,100, -1);
     crappyBird.ChangeImage("img/bird.gif", 75, 75);
+    topObstacle= new Obstacle(540, 200, 500, 50);
     
     playerPiece = new JLabel(new ImageIcon(crappyBird.birdImg));
+    obstaclePiece = new JLabel(new ImageIcon("img/tube2.png"));
     
     BackgroundImg = Toolkit.getDefaultToolkit().getImage("img/bg.png").getScaledInstance(720, 640, Image.SCALE_DEFAULT);
     
@@ -37,11 +41,15 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
         background.setLayout(null);
         
         background.add(playerPiece);
+        background.add(obstaclePiece);
         playerPiece.setBounds(new Rectangle(crappyBird.x, crappyBird.y, 75, 75));
+        obstaclePiece.setBounds(new Rectangle(topObstacle.x,topObstacle.y,50,500));
         
+        birdTimer = new Timer (1000/20,this);
+        OTimer = new Timer(1000/5,this);
         
-        timer = new Timer (1000/20,this);
-        timer.start();
+        birdTimer.start();
+        OTimer.start();
         
         addKeyListener(this);
         
@@ -98,9 +106,15 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
    }
    public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
-        if(obj==timer){
+        if(obj==birdTimer){
             crappyBird.y= crappyBird.y-(crappyBird.speed)*20;
             playerPiece.setBounds(new Rectangle(crappyBird.x, crappyBird.y, 75, 75));
+            
+            
+        }
+        if(obj==OTimer){
+            topObstacle.moveObstacle();
+            obstaclePiece.setBounds(new Rectangle(topObstacle.x, topObstacle.y, 50, 500));
         }
     }
    public void paintComponent(Graphics g)  //consider g as a pencil that is able to draw on the screen
