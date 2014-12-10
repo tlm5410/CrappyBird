@@ -10,11 +10,13 @@ public class MainPanel extends JPanel{
     EndPanel endPanel = new EndPanel();
     
     public MainPanel (){
-        setLayout(new GridLayout(3,1));
-        add(titlePanel);
-//       add(gamePanel);
-        add(endPanel);
+
         
-        endPanel.setVisible(false);
+        add(titlePanel);
+       // add(gamePanel);
+        // add(endPanel);
+        
+        //endPanel.setVisible(false);
+        titlePanel.setVisible(true);
     }
 }
