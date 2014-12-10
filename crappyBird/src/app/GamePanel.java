@@ -2,6 +2,7 @@ package app;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -39,17 +40,19 @@ public class GamePanel extends JPanel implements KeyListener, ActionListener{
     GroundImg = Toolkit.getDefaultToolkit().getImage("img/ground.png").getScaledInstance(720, 640, Image.SCALE_DEFAULT);
     setLayout(new BorderLayout());
         background = new JLabel(new ImageIcon(BackgroundImg));
-       
+        ground = new JLabel(new ImageIcon(GroundImg));
+        
         add(background);
         
-        ground.setLayout(null);
+        
         background.setLayout(null);
         
         background.add(playerPiece);
         background.add(obstaclePiece);
         background.add(ground);
+        
         ground.setBounds(new Rectangle(720,1725));
-
+        
         playerPiece.setBounds(new Rectangle(crappyBird.x, crappyBird.y, 75, 75));
         obstaclePiece.setBounds(new Rectangle(topObstacle.x,topObstacle.y,50,500));
         
